@@ -9,11 +9,22 @@ const filterItems = document.querySelectorAll(".filter-item");
 const accordions = document.querySelectorAll(".accordion-item");
 const pageLoader = document.querySelector(".page-loader");
 const pageLinks = document.querySelectorAll('a[href$=".html"]');
+const themeLogos = document.querySelectorAll("[data-logo-dark]");
 
 const savedTheme = localStorage.getItem("squadtech-theme");
 if (savedTheme === "light") {
   body.classList.add("light-theme");
 }
+
+function syncThemeLogos() {
+  const useLightLogo = body.classList.contains("light-theme");
+
+  themeLogos.forEach((logo) => {
+    logo.src = useLightLogo ? logo.dataset.logoLight : logo.dataset.logoDark;
+  });
+}
+
+syncThemeLogos();
 
 window.addEventListener("load", () => {
   body.classList.remove("is-loading");
@@ -54,6 +65,7 @@ themeToggles.forEach((toggle) => {
   toggle.addEventListener("click", () => {
     body.classList.toggle("light-theme");
     localStorage.setItem("squadtech-theme", body.classList.contains("light-theme") ? "light" : "dark");
+    syncThemeLogos();
   });
 });
 
