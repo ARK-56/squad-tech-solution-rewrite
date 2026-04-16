@@ -11,21 +11,156 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="font-poppins" data-page="contact">
+<body class="font-poppins is-loading" data-page="contact">
+  <div class="page-loader" aria-hidden="true">
+    <div class="loader-core">
+      <div class="loader-mark"></div>
+      <div class="loader-label">Squadtech</div>
+    </div>
+  </div>
   <div class="site-shell">
     <header class="site-header">
       <nav class="site-nav">
         <a href="index.html" class="brand-lockup" aria-label="Squadtech Solution home"><span class="logo-mark" aria-hidden="true"></span><span><span class="brand-wordmark">squadtech</span><span class="brand-subtext">solution</span></span></a>
         <button class="menu-toggle md:hidden" type="button" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
         <div class="nav-cluster hidden md:flex"><a href="index.html" class="nav-link">Home</a><a href="services.html" class="nav-link">Services</a><a href="about.html" class="nav-link">About</a><a href="portfolio.html" class="nav-link">Portfolio</a><a href="contact.html" class="nav-link is-active">Contact</a></div>
-        <div class="header-actions hidden md:flex"><button class="theme-toggle" type="button" aria-label="Toggle light and dark mode"><span class="theme-toggle-track"><span class="theme-icon sun">Light</span><span class="theme-icon moon">Dark</span></span></button><a href="contact.html" class="primary-button magnetic-button">Start a Project</a></div>
+        <div class="header-actions hidden md:flex"><button class="theme-toggle" type="button" aria-label="Toggle light and dark mode"><span class="theme-toggle-track"><span class="theme-icon sun" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" /></svg></span><span class="theme-icon moon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" /></svg></span></span></button><a href="contact.html" class="primary-button magnetic-button">Start a Project</a></div>
       </nav>
-      <div id="mobile-menu" class="mobile-menu md:hidden"><div class="mobile-links"><a href="index.html" class="nav-link">Home</a><a href="services.html" class="nav-link">Services</a><a href="about.html" class="nav-link">About</a><a href="portfolio.html" class="nav-link">Portfolio</a><a href="contact.html" class="nav-link is-active">Contact</a><div class="mobile-actions"><button class="theme-toggle" type="button" aria-label="Toggle light and dark mode"><span class="theme-toggle-track"><span class="theme-icon sun">Light</span><span class="theme-icon moon">Dark</span></span></button><a href="contact.html" class="primary-button">Start a Project</a></div></div></div>
+      <div id="mobile-menu" class="mobile-menu md:hidden"><div class="mobile-links"><a href="index.html" class="nav-link">Home</a><a href="services.html" class="nav-link">Services</a><a href="about.html" class="nav-link">About</a><a href="portfolio.html" class="nav-link">Portfolio</a><a href="contact.html" class="nav-link is-active">Contact</a><div class="mobile-actions"><button class="theme-toggle" type="button" aria-label="Toggle light and dark mode"><span class="theme-toggle-track"><span class="theme-icon sun" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" /></svg></span><span class="theme-icon moon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" /></svg></span></span></button><a href="contact.html" class="primary-button">Start a Project</a></div></div></div>
     </header>
 
     <main>
-      <section class="page-section inner-hero"><div class="section-inner"><p class="eyebrow reveal">Contact</p><h1 class="page-title reveal">Bring the brief, the ambition, or the rough idea. We'll shape the rest.</h1><p class="section-copy reveal max-w-3xl">Reach out to plan a premium website, product redesign, or a focused growth-oriented digital launch.</p></div></section>
+      <section class="page-section inner-hero">
+        <div class="section-inner inner-hero-grid">
+          <div>
+            <p class="eyebrow reveal">Contact</p>
+            <h1 class="page-title reveal">Bring the brief, the ambition, or the rough idea. We'll shape the rest.</h1>
+            <p class="section-copy reveal max-w-3xl">Reach out to plan a premium website, product redesign, or a focused growth-oriented digital launch.</p>
+          </div>
+          <div class="hero-side-card reveal interactive-card" data-tilt>
+            <p class="eyebrow">Best fit</p>
+            <span class="card-icon card-icon--orbit" aria-hidden="true"></span>
+            <h3>Teams looking for a site that feels more intentional, more premium, and more conversion-ready.</h3>
+            <p class="section-copy">If you already know the direction or just know the current site is not enough, we can work from there.</p>
+          </div>
+        </div>
+      </section>
       <section class="page-section"><div class="section-inner contact-grid"><div class="contact-panel reveal interactive-card" data-tilt><p class="eyebrow">Start a conversation</p><h2 class="section-title">Tell us what you're building.</h2><p class="section-copy">We typically align around goals, timeline, audience, and the level of creative ambition you want the site to carry.</p><div class="contact-list"><a href="mailto:hello@squadtechsolution.com">hello@squadtechsolution.com</a><a href="tel:+10000000000">+1 (000) 000-0000</a></div></div><div class="contact-panel reveal interactive-card" data-tilt><p class="eyebrow">What to expect</p><div class="timeline-list"><div class="timeline-item"><strong>01. Discovery</strong><span>We align on goals, users, and tone.</span></div><div class="timeline-item"><strong>02. Concept</strong><span>We shape visual direction and page narrative.</span></div><div class="timeline-item"><strong>03. Build</strong><span>We turn the approved direction into a polished frontend.</span></div></div></div></div></section>
+      <section class="page-section">
+        <div class="section-inner">
+          <div class="detail-grid">
+            <article class="detail-card reveal interactive-card" data-tilt>
+              <span class="card-icon card-icon--spark" aria-hidden="true"></span>
+              <h3>What helps most</h3>
+              <p>Share your current website, target audience, desired tone, and any launch or campaign deadlines you already have.</p>
+            </article>
+            <article class="detail-card reveal interactive-card" data-tilt>
+              <span class="card-icon card-icon--grid" aria-hidden="true"></span>
+              <h3>Typical outcomes</h3>
+              <p>We usually support marketing sites, product refreshes, launch pages, and brand upgrades that need stronger digital presence.</p>
+            </article>
+            <article class="detail-card reveal interactive-card" data-tilt>
+              <span class="card-icon card-icon--orbit" aria-hidden="true"></span>
+              <h3>Engagement style</h3>
+              <p>Projects stay collaborative and focused, with fast feedback loops so the final result keeps momentum without feeling rushed.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="reveal max-w-2xl">
+              <p class="eyebrow">Project Readiness</p>
+              <h2 class="section-title">You do not need a perfect brief to start the conversation.</h2>
+              <p class="section-copy">Some teams come with wireframes and copy. Others just know their current site no longer reflects the level they want to operate at. Both are workable.</p>
+            </div>
+          </div>
+          <div class="detail-grid">
+            <article class="detail-card reveal interactive-card" data-tilt>
+              <span class="card-icon card-icon--spark" aria-hidden="true"></span>
+              <h3>If you have direction</h3>
+              <p>We can quickly translate existing strategy, brand inputs, and goals into a stronger digital system and launch path.</p>
+            </article>
+            <article class="detail-card reveal interactive-card" data-tilt>
+              <span class="card-icon card-icon--grid" aria-hidden="true"></span>
+              <h3>If you need clarity</h3>
+              <p>We can help define the narrative, decide what matters most, and build a more focused structure before design decisions accelerate.</p>
+            </article>
+            <article class="detail-card reveal interactive-card" data-tilt>
+              <span class="card-icon card-icon--orbit" aria-hidden="true"></span>
+              <h3>If you need speed</h3>
+              <p>We keep scope and collaboration tight so the project can move quickly without collapsing into generic design shortcuts.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="reveal max-w-2xl">
+              <p class="eyebrow">Signals</p>
+              <h2 class="section-title">A few signs it might be the right time to refresh your digital presence.</h2>
+              <p class="section-copy">Sometimes the brief is not the starting point. The starting point is simply noticing that the site no longer matches the quality of the business.</p>
+            </div>
+          </div>
+          <div class="interactive-badge-row reveal">
+            <div class="interactive-badge">Your offer feels stronger than your site</div>
+            <div class="interactive-badge">The design looks dated on mobile</div>
+            <div class="interactive-badge">Visitors do not grasp the value quickly</div>
+            <div class="interactive-badge">The current experience feels generic</div>
+            <div class="interactive-badge">You need a sharper launch surface</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="reveal max-w-2xl">
+              <p class="eyebrow">FAQ</p>
+              <h2 class="section-title">A little more clarity before reaching out.</h2>
+            </div>
+          </div>
+          <div class="accordion-list reveal">
+            <div class="accordion-item is-open">
+              <button class="accordion-trigger" type="button" aria-expanded="true">
+                What should we prepare before contacting you?
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-content-inner">
+                  <p>A current website, a short summary of what you are building, and any rough timeline is enough to begin a useful conversation.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Can we start even if the scope is still fuzzy?
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-content-inner">
+                  <p>Yes. In many cases, clarifying scope and sharpening the core story is part of the early value we provide.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Do you help after launch too?
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-content-inner">
+                  <p>Yes. We can support post-launch refinement, iteration priorities, and continued visual or frontend improvements where needed.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer"><div class="section-inner footer-row"><div class="brand-lockup"><span class="logo-mark small" aria-hidden="true"></span><span><span class="brand-wordmark">squadtech</span><span class="brand-subtext">solution</span></span></div><p>Premium digital experiences for modern brands.</p><div class="footer-links"><a href="services.html">Services</a><a href="about.html">About</a><a href="portfolio.html">Work</a></div></div></footer>

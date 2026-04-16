@@ -6,11 +6,24 @@ const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
 const filterChips = document.querySelectorAll(".filter-chip");
 const filterItems = document.querySelectorAll(".filter-item");
+const accordions = document.querySelectorAll(".accordion-item");
+const pageLoader = document.querySelector(".page-loader");
+const pageLinks = document.querySelectorAll('a[href$=".html"]');
 
 const savedTheme = localStorage.getItem("squadtech-theme");
 if (savedTheme === "light") {
   body.classList.add("light-theme");
 }
+
+window.addEventListener("load", () => {
+  body.classList.remove("is-loading");
+
+  if (!pageLoader) {
+    return;
+  }
+
+  pageLoader.classList.add("is-hidden");
+});
 
 revealNodes.forEach((node, index) => {
   if (node.classList.contains("stagger")) {
@@ -82,5 +95,33 @@ filterChips.forEach((chip) => {
       const matches = filter === "all" || item.dataset.category === filter;
       item.classList.toggle("is-hidden", !matches);
     });
+  });
+});
+
+accordions.forEach((item) => {
+  const trigger = item.querySelector(".accordion-trigger");
+  if (!trigger) {
+    return;
+  }
+
+  trigger.addEventListener("click", () => {
+    const isOpen = item.classList.toggle("is-open");
+    trigger.setAttribute("aria-expanded", String(isOpen));
+  });
+});
+
+pageLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const href = link.getAttribute("href");
+
+    if (!href || href.startsWith("#") || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+      return;
+    }
+
+    body.classList.add("is-loading");
+
+    if (pageLoader) {
+      pageLoader.classList.remove("is-hidden");
+    }
   });
 });

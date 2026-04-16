@@ -1,3 +1,33 @@
+@font-face {
+  font-family: "Grift";
+  src:
+    url("./fonts/grift/grift-semibold.otf") format("opentype"),
+    url("./fonts/grift/grift-semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grift";
+  src:
+    url("./fonts/grift/grift-bold.otf") format("opentype"),
+    url("./fonts/grift/grift-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grift";
+  src:
+    url("./fonts/grift/grift-extrabold.otf") format("opentype"),
+    url("./fonts/grift/grift-extrabold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   color-scheme: dark;
   --bg: #060606;
@@ -53,6 +83,10 @@ body {
   transition: background 240ms ease, color 240ms ease;
 }
 
+body.is-loading {
+  overflow: hidden;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -69,6 +103,82 @@ a {
   background-size: 84px 84px;
   mask-image: radial-gradient(circle at center, #000 54%, transparent 92%);
   opacity: 0.75;
+}
+
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(245, 142, 30, 0.16), transparent 18%),
+    radial-gradient(circle at 52% 58%, rgba(231, 49, 3, 0.18), transparent 22%),
+    color-mix(in srgb, var(--bg) 94%, transparent);
+  transition: opacity 420ms ease, visibility 420ms ease;
+}
+
+.page-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-core {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.loader-mark {
+  position: relative;
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 44% 56% 63% 37% / 39% 38% 62% 61%;
+  background:
+    radial-gradient(circle at 26% 28%, rgba(255, 255, 255, 0.72), transparent 30%),
+    linear-gradient(135deg, var(--brand-red), var(--brand-orange));
+  box-shadow: 0 14px 30px rgba(231, 49, 3, 0.24);
+  animation: loaderMorph 1.4s ease-in-out infinite alternate;
+}
+
+.loader-mark::after {
+  content: "";
+  position: absolute;
+  inset: -0.8rem;
+  border-radius: inherit;
+  border: 1px solid rgba(245, 142, 30, 0.18);
+  animation: loaderRing 1.6s ease-out infinite;
+}
+
+.loader-label {
+  font-family: "Grift", "Poppins", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@keyframes loaderMorph {
+  from {
+    transform: rotate(-10deg) scale(0.96);
+    border-radius: 44% 56% 63% 37% / 39% 38% 62% 61%;
+  }
+  to {
+    transform: rotate(8deg) scale(1.04);
+    border-radius: 58% 42% 38% 62% / 49% 57% 43% 51%;
+  }
+}
+
+@keyframes loaderRing {
+  from {
+    opacity: 0.7;
+    transform: scale(0.72);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.18);
+  }
 }
 
 .site-header {
@@ -124,6 +234,7 @@ a {
   background: #ffffff;
   color: #000000;
   font-size: 1.1rem;
+  font-family: "Grift", "Poppins", sans-serif;
   font-weight: 700;
   line-height: 1;
 }
@@ -193,7 +304,7 @@ a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.2rem;
-  width: 8.2rem;
+  width: 4.8rem;
   padding: 0.18rem;
 }
 
@@ -204,21 +315,29 @@ a {
   width: calc(50% - 0.18rem);
   border-radius: 999px;
   background: linear-gradient(135deg, var(--brand-red), var(--brand-orange));
+  transform: translateX(100%);
   transition: transform 220ms ease;
 }
 
 body.light-theme .theme-toggle-track::before {
-  transform: translateX(100%);
+  transform: translateX(0);
 }
 
 .theme-icon {
   position: relative;
   z-index: 1;
   display: inline-flex;
+  align-items: center;
   justify-content: center;
-  padding: 0.55rem 0;
-  font-size: 0.78rem;
-  font-weight: 600;
+  width: 2rem;
+  height: 2rem;
+}
+
+.theme-icon svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  stroke: currentColor;
+  fill: none;
 }
 
 .primary-button,
@@ -337,25 +456,27 @@ body.light-theme .theme-toggle-track::before {
   font-weight: 600;
   letter-spacing: 0.32em;
   text-transform: uppercase;
+  margin-bottom: 1.15rem;
 }
 
 .hero-title,
 .page-title,
 .section-title {
   margin: 0;
+  font-family: "Grift", "Poppins", sans-serif;
   letter-spacing: -0.05em;
   line-height: 0.95;
 }
 
 .hero-title {
   max-width: 52rem;
-  font-size: clamp(3.35rem, 8vw, 6.6rem);
+  font-size: clamp(2.75rem, 8vw, 6rem);
 }
 
 .page-title,
 .section-title {
   max-width: 52rem;
-  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  font-size: clamp(2rem, 5vw, 3.9rem);
 }
 
 .hero-copy,
@@ -378,6 +499,27 @@ body.light-theme .theme-toggle-track::before {
   line-height: 1.95;
 }
 
+.hero-title + .hero-copy,
+.page-title + .section-copy,
+.section-title + .section-copy,
+.section-title + .feature-list,
+.service-card h3 + p,
+.feature-list-card h3 + p,
+.detail-card h3 + p,
+.testimonial-card h3 + p,
+.hero-side-card h3 + p,
+.about-visual-copy h3 + .about-metrics,
+.contact-panel h2 + .section-copy {
+  margin-top: 1.35rem;
+}
+
+.eyebrow + .hero-title,
+.eyebrow + .page-title,
+.eyebrow + .section-title,
+.eyebrow + h3 {
+  margin-top: 0.4rem;
+}
+
 .section-head {
   display: flex;
   justify-content: space-between;
@@ -388,12 +530,15 @@ body.light-theme .theme-toggle-track::before {
 
 .section-copy {
   max-width: 34rem;
+  margin-top: 1.25rem;
 }
 
 .stats-grid,
 .hero-tags,
 .feature-list,
-.portfolio-metrics {
+.portfolio-metrics,
+.testimonial-grid,
+.detail-grid {
   display: grid;
   gap: 1rem;
 }
@@ -411,7 +556,10 @@ body.light-theme .theme-toggle-track::before {
 .portfolio-card,
 .portfolio-feature,
 .cta-panel,
-.contact-panel {
+.contact-panel,
+.testimonial-card,
+.detail-card,
+.hero-side-card {
   position: relative;
   overflow: hidden;
   border: 1px solid var(--surface-border);
@@ -425,7 +573,10 @@ body.light-theme .theme-toggle-track::before {
 .service-card,
 .portfolio-card,
 .feature-list-card,
-.contact-panel {
+.contact-panel,
+.testimonial-card,
+.detail-card,
+.hero-side-card {
   border-radius: 1.8rem;
 }
 
@@ -441,7 +592,10 @@ body.light-theme .theme-toggle-track::before {
 .service-card,
 .feature-list-card,
 .portfolio-card,
-.contact-panel {
+.contact-panel,
+.testimonial-card,
+.detail-card,
+.hero-side-card {
   padding: 1.6rem;
 }
 
@@ -501,8 +655,12 @@ body.light-theme .theme-toggle-track::before {
 .about-visual h3,
 .service-card h3,
 .feature-list-card h3,
-.contact-panel h2 {
+.contact-panel h2,
+.detail-card h3,
+.testimonial-card h3,
+.hero-side-card h3 {
   margin: 0;
+  font-family: "Grift", "Poppins", sans-serif;
   font-size: 1.65rem;
   line-height: 1.2;
 }
@@ -583,6 +741,9 @@ body.light-theme .highlight-card {
 }
 
 .service-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 3.8rem;
   height: 3.8rem;
   border-radius: 1.3rem;
@@ -590,6 +751,14 @@ body.light-theme .highlight-card {
     radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.55), transparent 18%),
     linear-gradient(135deg, rgba(231, 49, 3, 0.3), rgba(245, 142, 30, 0.2));
   border: 1px solid var(--surface-border);
+}
+
+.service-icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  display: block;
+  flex: 0 0 auto;
+  stroke: currentColor;
 }
 
 .service-card h3,
@@ -604,7 +773,218 @@ body.light-theme .highlight-card {
 }
 
 .section-action {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
+}
+
+.inner-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.5rem;
+  align-items: end;
+}
+
+.hero-side-card {
+  background:
+    radial-gradient(circle at 84% 12%, rgba(245, 142, 30, 0.16), transparent 20%),
+    var(--bg-elevated);
+}
+
+.hero-side-card p + p,
+.detail-card p,
+.testimonial-card p {
+  margin-bottom: 0;
+}
+
+.detail-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.content-stack {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card-icon {
+  display: inline-flex;
+  width: 2.8rem;
+  height: 2.8rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--surface-border);
+  background:
+    radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.6), transparent 20%),
+    linear-gradient(135deg, rgba(231, 49, 3, 0.24), rgba(245, 142, 30, 0.18));
+  position: relative;
+}
+
+.card-icon::before,
+.card-icon::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  background: currentColor;
+  color: var(--text);
+  opacity: 0.92;
+}
+
+.card-icon--spark::before {
+  width: 0.9rem;
+  height: 0.14rem;
+  transform: rotate(45deg);
+}
+
+.card-icon--spark::after {
+  width: 0.14rem;
+  height: 0.9rem;
+  transform: rotate(45deg);
+}
+
+.card-icon--grid::before {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.28rem;
+  background: transparent;
+  border: 2px solid currentColor;
+}
+
+.card-icon--grid::after {
+  width: 0.42rem;
+  height: 0.42rem;
+  transform: translate(0.24rem, 0.24rem);
+}
+
+.card-icon--orbit::before {
+  width: 1rem;
+  height: 1rem;
+  background: transparent;
+  border: 2px solid currentColor;
+}
+
+.card-icon--orbit::after {
+  width: 0.34rem;
+  height: 0.34rem;
+  transform: translate(0.48rem, -0.4rem);
+}
+
+.accordion-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.accordion-item {
+  border: 1px solid var(--surface-border);
+  border-radius: 1.4rem;
+  background: var(--bg-elevated);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 1.3rem;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-family: "Grift", "Poppins", sans-serif;
+  font-size: 1.1rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.accordion-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  border: 1px solid var(--surface-border);
+  color: var(--brand-orange);
+  transition: transform 220ms ease;
+}
+
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 240ms ease;
+}
+
+.accordion-content-inner {
+  overflow: hidden;
+}
+
+.accordion-content p {
+  margin: 0;
+  padding: 0 1.3rem 1.3rem;
+  color: var(--text-soft);
+  line-height: 1.8;
+}
+
+.accordion-item.is-open .accordion-content {
+  grid-template-rows: 1fr;
+}
+
+.accordion-item.is-open .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.interactive-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.interactive-badge {
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--surface-border);
+  background: var(--surface);
+  color: var(--text-soft);
+  transition: transform 220ms ease, border-color 220ms ease, color 220ms ease;
+}
+
+.interactive-badge:hover {
+  transform: translateY(-3px);
+  border-color: rgba(245, 142, 30, 0.35);
+  color: var(--text);
+}
+
+.detail-card h3,
+.testimonial-card h3 {
+  margin: 0 0 0.9rem;
+  font-size: 1.35rem;
+}
+
+.testimonial-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.testimonial-card blockquote {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.02rem;
+  font-family: "Grift", "Poppins", sans-serif;
+  line-height: 1.8;
+}
+
+.testimonial-meta {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+}
+
+.testimonial-role {
+  color: var(--text-soft);
+  font-size: 0.92rem;
 }
 
 .about-visual {
@@ -857,11 +1237,14 @@ body.light-theme .portfolio-feature {
 
 @media (max-width: 1023px) {
   .hero-grid,
+  .inner-hero-grid,
   .split-layout,
   .portfolio-grid,
   .contact-grid,
   .portfolio-page-grid,
   .services-grid,
+  .detail-grid,
+  .testimonial-grid,
   .feature-list,
   .hero-tags,
   .stats-grid,
@@ -910,12 +1293,12 @@ body.light-theme .portfolio-feature {
   }
 
   .hero-title {
-    font-size: clamp(2.8rem, 12vw, 4.2rem);
+    font-size: clamp(2.2rem, 12vw, 3.6rem);
   }
 
   .page-title,
   .section-title {
-    font-size: clamp(2.15rem, 10vw, 3.1rem);
+    font-size: clamp(1.55rem, 10vw, 2.5rem);
   }
 
   .about-visual-copy h3 {
@@ -923,6 +1306,6 @@ body.light-theme .portfolio-feature {
   }
 
   .theme-toggle-track {
-    width: 7.2rem;
+    width: 4.8rem;
   }
 }

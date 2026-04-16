@@ -11,7 +11,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="font-poppins" data-page="services">
+<body class="font-poppins is-loading" data-page="services">
+  <div class="page-loader" aria-hidden="true">
+    <div class="loader-core">
+      <div class="loader-mark"></div>
+      <div class="loader-label">Squadtech</div>
+    </div>
+  </div>
   <div class="site-shell">
     <header class="site-header">
       <nav class="site-nav">
@@ -36,8 +42,8 @@
         <div class="header-actions hidden md:flex">
           <button class="theme-toggle" type="button" aria-label="Toggle light and dark mode">
             <span class="theme-toggle-track">
-              <span class="theme-icon sun">Light</span>
-              <span class="theme-icon moon">Dark</span>
+              <span class="theme-icon sun" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" /></svg></span>
+              <span class="theme-icon moon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" /></svg></span>
             </span>
           </button>
           <a href="contact.html" class="primary-button magnetic-button">Start a Project</a>
@@ -53,8 +59,8 @@
           <div class="mobile-actions">
             <button class="theme-toggle" type="button" aria-label="Toggle light and dark mode">
               <span class="theme-toggle-track">
-                <span class="theme-icon sun">Light</span>
-                <span class="theme-icon moon">Dark</span>
+                <span class="theme-icon sun" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" /></svg></span>
+                <span class="theme-icon moon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" /></svg></span>
               </span>
             </button>
             <a href="contact.html" class="primary-button">Start a Project</a>
@@ -65,24 +71,153 @@
 
     <main>
       <section class="page-section inner-hero">
-        <div class="section-inner">
-          <p class="eyebrow reveal">Services</p>
-          <h1 class="page-title reveal">Digital services crafted to make modern brands look sharper and launch faster.</h1>
-          <p class="section-copy reveal max-w-3xl">
-            From premium websites to scalable design systems, our work balances visual impact, usability, and production-ready engineering.
-          </p>
+        <div class="section-inner inner-hero-grid">
+          <div>
+            <p class="eyebrow reveal">Services</p>
+            <h1 class="page-title reveal">Digital services crafted to make modern brands look sharper and launch faster.</h1>
+            <p class="section-copy reveal max-w-3xl">
+              From premium websites to scalable design systems, our work balances visual impact, usability, and production-ready engineering.
+            </p>
+          </div>
+          <div class="hero-side-card reveal interactive-card" data-tilt>
+            <p class="eyebrow">Core model</p>
+            <h3>Strategy, design, and implementation in one connected workflow.</h3>
+            <p class="section-copy">That means fewer disconnects between the idea, the interface, and the shipped result.</p>
+          </div>
         </div>
       </section>
 
       <section class="page-section">
         <div class="section-inner">
           <div class="services-grid">
-            <article class="service-card reveal interactive-card" data-tilt><div class="service-icon"></div><h3>Brand-first Websites</h3><p>Signature landing pages and corporate sites with deliberate composition, stronger CTA sequencing, and a tailored visual language.</p></article>
-            <article class="service-card reveal interactive-card" data-tilt><div class="service-icon"></div><h3>Product UI/UX Design</h3><p>Workflow design, information architecture, and UI systems that reduce friction while keeping the experience sophisticated.</p></article>
-            <article class="service-card reveal interactive-card" data-tilt><div class="service-icon"></div><h3>Frontend Engineering</h3><p>Responsive and maintainable implementations using modern tooling, clear component structure, and performance-conscious motion.</p></article>
-            <article class="service-card reveal interactive-card" data-tilt><div class="service-icon"></div><h3>Conversion Optimization</h3><p>Message hierarchy, trust architecture, and interaction tuning that move visitors toward demos, signups, or purchases.</p></article>
-            <article class="service-card reveal interactive-card" data-tilt><div class="service-icon"></div><h3>Design Systems</h3><p>Reusable visual foundations that create consistency across products, marketing surfaces, and internal teams.</p></article>
-            <article class="service-card reveal interactive-card" data-tilt><div class="service-icon"></div><h3>Launch Support</h3><p>Iteration planning, QA support, and post-launch refinement so quality stays high after the initial release.</p></article>
+            <article class="service-card reveal interactive-card" data-tilt><div class="service-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-warehouse-icon lucide-warehouse"><path d="M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11"/><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z"/><path d="M6 13h12"/><path d="M6 17h12"/></svg></div><h3>Brand-first Websites</h3><p>Signature landing pages and corporate sites with deliberate composition, stronger CTA sequencing, and a tailored visual language.</p></article>
+            <article class="service-card reveal interactive-card" data-tilt><div class="service-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallpaper-icon lucide-wallpaper"><path d="M12 17v4"/><path d="M8 21h8"/><path d="m9 17 6.1-6.1a2 2 0 0 1 2.81.01L22 15"/><circle cx="8" cy="9" r="2"/><rect x="2" y="3" width="20" height="14" rx="2"/></svg></div><h3>Product UI/UX Design</h3><p>Workflow design, information architecture, and UI systems that reduce friction while keeping the experience sophisticated.</p></article>
+            <article class="service-card reveal interactive-card" data-tilt><div class="service-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-cog-icon lucide-file-cog"><path d="M15 8a1 1 0 0 1-1-1V2a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8z"/><path d="M20 8v12a2 2 0 0 1-2 2h-4.182"/><path d="m3.305 19.53.923-.382"/><path d="M4 10.592V4a2 2 0 0 1 2-2h8"/><path d="m4.228 16.852-.924-.383"/><path d="m5.852 15.228-.383-.923"/><path d="m5.852 20.772-.383.924"/><path d="m8.148 15.228.383-.923"/><path d="m8.53 21.696-.382-.924"/><path d="m9.773 16.852.922-.383"/><path d="m9.773 19.148.922.383"/><circle cx="7" cy="18" r="3"/></svg></div><h3>Frontend Engineering</h3><p>Responsive and maintainable implementations using modern tooling, clear component structure, and performance-conscious motion.</p></article>
+            <article class="service-card reveal interactive-card" data-tilt><div class="service-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download-icon lucide-download"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg></div><h3>Conversion Optimization</h3><p>Message hierarchy, trust architecture, and interaction tuning that move visitors toward demos, signups, or purchases.</p></article>
+            <article class="service-card reveal interactive-card" data-tilt><div class="service-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-icon lucide-code"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg></div><h3>Design Systems</h3><p>Reusable visual foundations that create consistency across products, marketing surfaces, and internal teams.</p></article>
+            <article class="service-card reveal interactive-card" data-tilt><div class="service-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-messages-square-icon lucide-messages-square"><path d="M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/><path d="M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1"/></svg></div><h3>Launch Support</h3><p>Iteration planning, QA support, and post-launch refinement so quality stays high after the initial release.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="reveal max-w-2xl">
+              <p class="eyebrow">How We Work</p>
+              <h2 class="section-title">A service stack built to keep ambition high and execution clean.</h2>
+            </div>
+          </div>
+          <div class="detail-grid">
+            <article class="detail-card reveal interactive-card" data-tilt>
+              <span class="card-icon card-icon--spark" aria-hidden="true"></span>
+              <h3>Discovery and positioning</h3>
+              <p>We align on audience, offer strength, and what the site needs to communicate before the visual system starts taking shape.</p>
+            </article>
+            <article class="detail-card reveal interactive-card" data-tilt>
+              <span class="card-icon card-icon--grid" aria-hidden="true"></span>
+              <h3>Visual direction</h3>
+              <p>Layout rhythm, hierarchy, depth, and brand expression are developed as a system, not as disconnected screen decisions.</p>
+            </article>
+            <article class="detail-card reveal interactive-card" data-tilt>
+              <span class="card-icon card-icon--orbit" aria-hidden="true"></span>
+              <h3>Production delivery</h3>
+              <p>The final build carries the same intent as the concept, with responsive behavior, polished interactions, and reusable structure.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="reveal max-w-2xl">
+              <p class="eyebrow">Engagements</p>
+              <h2 class="section-title">The kind of service work we usually get called in for.</h2>
+              <p class="section-copy">Some clients need a launch-ready homepage. Others need a full visual reset with cleaner frontend execution behind it.</p>
+            </div>
+          </div>
+          <div class="detail-grid">
+            <article class="detail-card reveal interactive-card" data-tilt>
+              <span class="card-icon card-icon--spark" aria-hidden="true"></span>
+              <h3>Launch websites</h3>
+              <p>Ideal for new products, investor-facing launches, and campaigns that need a sharper first impression and stronger conversion flow.</p>
+            </article>
+            <article class="detail-card reveal interactive-card" data-tilt>
+              <span class="card-icon card-icon--grid" aria-hidden="true"></span>
+              <h3>Rebrand rollouts</h3>
+              <p>When the brand has evolved but the digital presence still looks dated, we rebuild the visual language into a cleaner, more premium system.</p>
+            </article>
+            <article class="detail-card reveal interactive-card" data-tilt>
+              <span class="card-icon card-icon--orbit" aria-hidden="true"></span>
+              <h3>Product marketing refreshes</h3>
+              <p>We help SaaS and platform teams tighten messaging, improve trust signals, and bring more refinement to feature storytelling.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="reveal max-w-2xl">
+              <p class="eyebrow">Focus Areas</p>
+              <h2 class="section-title">The outcomes we usually optimize for across service work.</h2>
+              <p class="section-copy">Different projects ask for different deliverables, but the goals tend to cluster around clarity, differentiation, and stronger conversion behavior.</p>
+            </div>
+          </div>
+          <div class="interactive-badge-row reveal">
+            <div class="interactive-badge">Higher trust on first visit</div>
+            <div class="interactive-badge">Sharper product storytelling</div>
+            <div class="interactive-badge">Cleaner mobile responsiveness</div>
+            <div class="interactive-badge">Stronger CTA sequencing</div>
+            <div class="interactive-badge">More premium brand perception</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="reveal max-w-2xl">
+              <p class="eyebrow">FAQ</p>
+              <h2 class="section-title">A few questions teams usually ask before we start.</h2>
+            </div>
+          </div>
+          <div class="accordion-list reveal">
+            <div class="accordion-item is-open">
+              <button class="accordion-trigger" type="button" aria-expanded="true">
+                What if we only need one part of the stack?
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-content-inner">
+                  <p>That works. Some engagements focus on design direction, some on frontend implementation, and some on both. The structure is flexible as long as the outcome stays clear.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Can you work from an existing brand system?
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-content-inner">
+                  <p>Yes. When a brand system already exists, we extend it carefully and improve the digital expression without forcing a full visual reset where it is not needed.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Do you support iterative launches?
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-content-inner">
+                  <p>Yes. Many projects ship in phases, with an initial high-impact release followed by deeper system expansion, testing, and refinement.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
