@@ -210,42 +210,14 @@ a {
   gap: 0.95rem;
 }
 
-.logo-mark {
-  display: inline-block;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 44% 56% 63% 37% / 39% 38% 62% 61%;
-  background:
-    radial-gradient(circle at 26% 28%, rgba(255, 255, 255, 0.72), transparent 30%),
-    linear-gradient(135deg, var(--brand-red), var(--brand-orange));
-  box-shadow: 0 12px 28px rgba(231, 49, 3, 0.34);
-  transform: rotate(-14deg);
-}
-
-.logo-mark.small {
-  width: 2.2rem;
-  height: 2.2rem;
-}
-
-.brand-wordmark {
+.brand-lockup img {
   display: block;
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
-  background: #ffffff;
-  color: #000000;
-  font-size: 1.1rem;
-  font-family: "Grift", "Poppins", sans-serif;
-  font-weight: 700;
-  line-height: 1;
+  width: auto;
+  height: 3.7rem;
 }
 
-.brand-subtext {
-  display: block;
-  margin-top: 0.45rem;
-  color: var(--brand-orange);
-  font-size: 0.62rem;
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
+.brand-lockup.footer-logo img {
+  height: 2.9rem;
 }
 
 .nav-cluster,
@@ -1283,8 +1255,8 @@ body.light-theme .portfolio-feature {
     padding: 4.5rem 0;
   }
 
-  .brand-wordmark {
-    font-size: 0.98rem;
+  .brand-lockup img {
+    height: 3rem;
   }
 
   .site-nav,
