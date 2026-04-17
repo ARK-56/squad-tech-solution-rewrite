@@ -37,6 +37,24 @@ const footerLinksByPage = {
   ]
 };
 
+const socialLinks = [
+  {
+    href: "https://www.instagram.com/squadtechsolution",
+    label: "Instagram",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.9" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="0.8" fill="currentColor" stroke="none"/></svg>`
+  },
+  {
+    href: "https://www.linkedin.com/company/squad-tech-solution",
+    label: "LinkedIn",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.9" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-12h4v2"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>`
+  },
+  {
+    href: "https://www.facebook.com/squadtechsolution",
+    label: "Facebook",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.9" stroke="currentColor"><path d="M15 8h3V3h-3a5 5 0 0 0-5 5v3H7v5h3v5h5v-5h3l1-5h-4V8a1 1 0 0 1 1-1Z"/></svg>`
+  }
+];
+
 function themeIconsMarkup() {
   return `
     <span class="theme-toggle-track">
@@ -110,6 +128,9 @@ function renderHeader(activeKey) {
 function renderFooter(activeKey) {
   const links = footerLinksByPage[activeKey] || footerLinksByPage.home;
   const footerLinks = links.map((item) => `<a href="${item.href}">${item.label}</a>`).join("");
+  const socials = socialLinks
+    .map((item) => `<a href="${item.href}" class="social-link" target="_blank" rel="noreferrer" aria-label="${item.label}">${item.icon}</a>`)
+    .join("");
 
   return `
     <footer class="site-footer">
@@ -118,8 +139,13 @@ function renderFooter(activeKey) {
           <img src="logo.png" data-logo-dark="logo.png" data-logo-light="logo-light.webp" alt="Squadtech Solution">
         </div>
         <p>Premium digital experiences for modern brands.</p>
-        <div class="footer-links">
-          ${footerLinks}
+        <div class="footer-meta">
+          <div class="footer-links">
+            ${footerLinks}
+          </div>
+          <div class="social-links">
+            ${socials}
+          </div>
         </div>
       </div>
     </footer>

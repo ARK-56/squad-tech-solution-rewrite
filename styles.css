@@ -209,7 +209,9 @@ a {
 .nav-cluster,
 .header-actions,
 .footer-links,
-.mobile-actions {
+.mobile-actions,
+.social-links,
+.footer-meta {
   display: flex;
   align-items: center;
   gap: 0.9rem;
@@ -1166,6 +1168,10 @@ body.light-theme .portfolio-feature {
   padding: 1.5rem 0;
 }
 
+.footer-meta {
+  gap: 1.1rem;
+}
+
 .footer-row {
   color: var(--text-soft);
 }
@@ -1176,6 +1182,32 @@ body.light-theme .portfolio-feature {
 
 .footer-links a:hover {
   color: var(--text);
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--surface-border);
+  background: var(--surface);
+  color: var(--text-soft);
+  transition: transform 180ms ease, color 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  color: var(--text);
+  border-color: rgba(245, 142, 30, 0.3);
+  background: color-mix(in srgb, var(--surface) 78%, rgba(245, 142, 30, 0.18));
+}
+
+.social-link svg {
+  width: 1rem;
+  height: 1rem;
+  display: block;
 }
 
 .reveal {
@@ -1215,6 +1247,10 @@ body.light-theme .portfolio-feature {
   .footer-row {
     flex-direction: column;
     align-items: start;
+  }
+
+  .footer-meta {
+    flex-wrap: wrap;
   }
 
   .cta-actions {
