@@ -124,7 +124,8 @@ filterChips.forEach((chip) => {
     chip.classList.add("is-active");
 
     filterItems.forEach((item) => {
-      const matches = filter === "all" || item.dataset.category === filter;
+      const categories = (item.dataset.category || "").split(/\s+/).filter(Boolean);
+      const matches = filter === "all" || categories.includes(filter);
       item.classList.toggle("is-hidden", !matches);
     });
   });
