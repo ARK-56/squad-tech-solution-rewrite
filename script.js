@@ -128,8 +128,26 @@ filterChips.forEach((chip) => {
       const matches = filter === "all" || categories.includes(filter);
       item.classList.toggle("is-hidden", !matches);
     });
+
+    if (window.location.pathname.endsWith("portfolio.html")) {
+      if (filter === "all") {
+        history.replaceState(null, "", "portfolio.html");
+      } else {
+        history.replaceState(null, "", `portfolio.html#${filter}`);
+      }
+    }
   });
 });
+
+if (filterChips.length && filterItems.length) {
+  const filterFromHash = window.location.hash.replace("#", "");
+  if (filterFromHash) {
+    const targetChip = Array.from(filterChips).find((chip) => chip.dataset.filter === filterFromHash);
+    if (targetChip) {
+      targetChip.click();
+    }
+  }
+}
 
 accordions.forEach((item) => {
   const trigger = item.querySelector(".accordion-trigger");
