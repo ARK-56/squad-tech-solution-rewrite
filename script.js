@@ -1,6 +1,6 @@
 const body = document.body;
 const revealNodes = document.querySelectorAll(".reveal");
-const tiltNodes = document.querySelectorAll("[data-tilt]");
+const tiltNodes = document.querySelectorAll("[data-tilt]:not(.article-shell)");
 const themeToggles = document.querySelectorAll(".theme-toggle");
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
@@ -10,6 +10,7 @@ const accordions = document.querySelectorAll(".accordion-item");
 const pageLoader = document.querySelector(".page-loader");
 const pageLinks = document.querySelectorAll('a[href$=".html"]');
 const themeLogos = document.querySelectorAll("[data-logo-dark]");
+const formStatusNode = document.querySelector("[data-form-status]");
 
 const savedTheme = localStorage.getItem("squadtech-theme");
 if (savedTheme === "light") {
@@ -25,6 +26,25 @@ function syncThemeLogos() {
 }
 
 syncThemeLogos();
+
+if (formStatusNode) {
+  const params = new URLSearchParams(window.location.search);
+  const status = params.get("status");
+
+  if (status === "success") {
+    formStatusNode.textContent = "Thanks. Your inquiry has been sent successfully and we will reply soon.";
+    formStatusNode.classList.remove("is-hidden");
+    formStatusNode.classList.add("is-success");
+  } else if (status === "error") {
+    formStatusNode.textContent = "We could not send your inquiry right now. Please try again or email inquiry@squadtechsol.com directly.";
+    formStatusNode.classList.remove("is-hidden");
+    formStatusNode.classList.add("is-error");
+  } else if (status === "invalid") {
+    formStatusNode.textContent = "Please complete the form with a valid name, email, and message.";
+    formStatusNode.classList.remove("is-hidden");
+    formStatusNode.classList.add("is-error");
+  }
+}
 
 window.addEventListener("load", () => {
   body.classList.remove("is-loading");

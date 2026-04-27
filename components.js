@@ -6,32 +6,43 @@ const navItems = [
   { href: "portfolio.html", label: "Portfolio", key: "portfolio" },
   { href: "services.html", label: "Services", key: "services" },
   { href: "about.html", label: "About", key: "about" },
+  { href: "blog.html", label: "Blog", key: "blog" },
   { href: "contact.html", label: "Contact", key: "contact" }
 ];
 
 const footerLinksByPage = {
   home: [
     { href: "services.html", label: "Services" },
+    { href: "blog.html", label: "Blog" },
     { href: "portfolio.html", label: "Work" },
     { href: "contact.html", label: "Contact" }
   ],
   services: [
     { href: "about.html", label: "About" },
+    { href: "blog.html", label: "Blog" },
     { href: "portfolio.html", label: "Work" },
     { href: "contact.html", label: "Contact" }
   ],
   about: [
+    { href: "services.html", label: "Services" },
+    { href: "blog.html", label: "Blog" },
+    { href: "portfolio.html", label: "Work" },
+    { href: "contact.html", label: "Contact" }
+  ],
+  blog: [
     { href: "services.html", label: "Services" },
     { href: "portfolio.html", label: "Work" },
     { href: "contact.html", label: "Contact" }
   ],
   portfolio: [
     { href: "services.html", label: "Services" },
+    { href: "blog.html", label: "Blog" },
     { href: "about.html", label: "About" },
     { href: "contact.html", label: "Contact" }
   ],
   contact: [
     { href: "services.html", label: "Services" },
+    { href: "blog.html", label: "Blog" },
     { href: "about.html", label: "About" },
     { href: "portfolio.html", label: "Work" }
   ]
