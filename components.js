@@ -3,9 +3,9 @@ const currentPage = siteBody.dataset.page || "home";
 
 const navItems = [
   { href: "index.html", label: "Home", key: "home" },
+  { href: "portfolio.html", label: "Portfolio", key: "portfolio" },
   { href: "services.html", label: "Services", key: "services" },
   { href: "about.html", label: "About", key: "about" },
-  { href: "portfolio.html", label: "Portfolio", key: "portfolio" },
   { href: "contact.html", label: "Contact", key: "contact" }
 ];
 
