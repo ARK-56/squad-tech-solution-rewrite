@@ -161,6 +161,7 @@ a {
     opacity: 0.7;
     transform: scale(0.72);
   }
+
   to {
     opacity: 0;
     transform: scale(1.18);
@@ -725,24 +726,24 @@ body.light-theme .theme-toggle-track::before {
   line-height: 1.95;
 }
 
-.hero-title + .hero-copy,
-.page-title + .section-copy,
-.section-title + .section-copy,
-.section-title + .feature-list,
-.service-card h3 + p,
-.feature-list-card h3 + p,
-.detail-card h3 + p,
-.testimonial-card h3 + p,
-.hero-side-card h3 + p,
-.about-visual-copy h3 + .about-metrics,
-.contact-panel h2 + .section-copy {
+.hero-title+.hero-copy,
+.page-title+.section-copy,
+.section-title+.section-copy,
+.section-title+.feature-list,
+.service-card h3+p,
+.feature-list-card h3+p,
+.detail-card h3+p,
+.testimonial-card h3+p,
+.hero-side-card h3+p,
+.about-visual-copy h3+.about-metrics,
+.contact-panel h2+.section-copy {
   margin-top: 1.35rem;
 }
 
-.eyebrow + .hero-title,
-.eyebrow + .page-title,
-.eyebrow + .section-title,
-.eyebrow + h3 {
+.eyebrow+.hero-title,
+.eyebrow+.page-title,
+.eyebrow+.section-title,
+.eyebrow+h3 {
   margin-top: 0.4rem;
 }
 
@@ -1015,7 +1016,7 @@ body.light-theme .highlight-card {
     var(--bg-elevated);
 }
 
-.hero-side-card p + p,
+.hero-side-card p+p,
 .detail-card p,
 .testimonial-card p {
   margin-bottom: 0;
@@ -1544,8 +1545,8 @@ body.light-theme .portfolio-feature {
 }
 
 .social-link svg {
-  width: 1rem;
-  height: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   display: block;
 }
 
@@ -1565,6 +1566,7 @@ body.light-theme .portfolio-feature {
 }
 
 @media (max-width: 1023px) {
+
   .hero-grid,
   .inner-hero-grid,
   .split-layout,
