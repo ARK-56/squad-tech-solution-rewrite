@@ -48,6 +48,15 @@ const footerLinksByPage = {
   ]
 };
 
+const serviceFooterLinks = [
+  { href: "portfolio.html#social", label: "Social Media Marketing" },
+  { href: "portfolio.html#seo", label: "SEO & PPC" },
+  { href: "portfolio.html#brand", label: "Brand Identity" },
+  { href: "portfolio.html#media", label: "Media Production" },
+  { href: "portfolio.html#web", label: "Web Development" },
+  { href: "portfolio.html#remote", label: "Dedicated Remote Staff" }
+];
+
 const socialLinks = [
   {
     href: "https://www.instagram.com/squadtechsolution",
@@ -159,23 +168,43 @@ function renderHeader(activeKey) {
 function renderFooter(activeKey) {
   const links = footerLinksByPage[activeKey] || footerLinksByPage.home;
   const footerLinks = links.map((item) => `<a href="${item.href}">${item.label}</a>`).join("");
+  const serviceLinks = serviceFooterLinks.map((item) => `<a href="${item.href}">${item.label}</a>`).join("");
   const socials = socialLinks
     .map((item) => `<a href="${item.href}" class="social-link" target="_blank" rel="noreferrer" aria-label="${item.label}">${item.icon}</a>`)
     .join("");
 
   return `
     <footer class="site-footer">
-      <div class="section-inner footer-row">
-        <div class="brand-lockup footer-logo">
-          <img src="logo.png" data-logo-dark="logo.png" data-logo-light="logo-light.webp" alt="Squadtech Solution">
-        </div>
-        <p>Premium digital experiences for modern brands.</p>
-        <div class="footer-meta">
-          <div class="footer-links">
-            ${footerLinks}
+      <div class="section-inner footer-grid">
+        <div class="footer-brand-block">
+          <div class="brand-lockup footer-logo">
+            <img src="logo.png" data-logo-dark="logo.png" data-logo-light="logo-light.webp" alt="Squadtech Solution">
           </div>
-          <div class="social-links">
-            ${socials}
+          <p class="footer-copy">Premium digital experiences for modern brands.</p>
+          <div class="footer-contact">
+            <p><strong>Address</strong><span>75 Hamid Hussain Farooqi Rd, Block 2 PECHS, Karachi, 75100</span></p>
+            <p><strong>Phone</strong><a href="tel:+12018206889">+1 (201) 820-6889</a></p>
+            <p><strong>Email</strong><a href="mailto:inquiry@squadtechsol.com">inquiry@squadtechsol.com</a></p>
+          </div>
+        </div>
+        <div class="footer-columns">
+          <div class="footer-column">
+            <p class="footer-heading">Quick Links</p>
+            <div class="footer-links footer-links-column">
+              ${footerLinks}
+            </div>
+          </div>
+          <div class="footer-column">
+            <p class="footer-heading">Services</p>
+            <div class="footer-links footer-links-column">
+              ${serviceLinks}
+            </div>
+          </div>
+          <div class="footer-column">
+            <p class="footer-heading">Social</p>
+            <div class="social-links footer-social-grid">
+              ${socials}
+            </div>
           </div>
         </div>
       </div>
