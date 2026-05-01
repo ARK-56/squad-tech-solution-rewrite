@@ -1112,6 +1112,49 @@ body.light-theme .highlight-card {
   gap: 1rem;
 }
 
+.faq-category-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-bottom: 1.35rem;
+}
+
+.faq-category-toggle {
+  cursor: pointer;
+}
+
+.faq-category-panels {
+  display: grid;
+}
+
+.faq-category-group {
+  display: none;
+  gap: 0.95rem;
+}
+
+.faq-category-group.is-active {
+  display: grid;
+}
+
+.faq-category-head {
+  display: flex;
+  align-items: center;
+}
+
+.faq-category-label {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.faq-category-accordion {
+  display: grid;
+  gap: 1rem;
+}
+
 .accordion-item {
   border: 1px solid var(--surface-border);
   border-radius: 1.4rem;
