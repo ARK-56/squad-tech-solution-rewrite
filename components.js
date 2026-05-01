@@ -49,12 +49,12 @@ const footerLinksByPage = {
 };
 
 const serviceFooterLinks = [
-  { href: "portfolio.html#social", label: "Social Media Marketing" },
-  { href: "portfolio.html#seo", label: "SEO & PPC" },
-  { href: "portfolio.html#brand", label: "Brand Identity" },
-  { href: "portfolio.html#media", label: "Media Production" },
-  { href: "portfolio.html#web", label: "Web Development" },
-  { href: "portfolio.html#remote", label: "Dedicated Remote Staff" },
+  { href: "service-social-media-marketing.html", label: "Social Media Marketing" },
+  { href: "service-seo-ppc.html", label: "SEO & PPC" },
+  { href: "service-brand-identity.html", label: "Brand Identity" },
+  { href: "service-media-production.html", label: "Media Production" },
+  { href: "service-web-development.html", label: "Web Development" },
+  { href: "service-dedicated-remote-staff.html", label: "Dedicated Remote Staff" },
 ];
 
 const socialLinks = [
